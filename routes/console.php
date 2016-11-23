@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Foundation\Inspiring;
-
+use App\User;
+use App\Notifications\InspireUser;
 /*
 |--------------------------------------------------------------------------
 | Console Routes
@@ -14,5 +15,9 @@ use Illuminate\Foundation\Inspiring;
 */
 
 Artisan::command('inspire', function () {
-    $this->comment(Inspiring::quote());
-})->describe('Display an inspiring quote');
+  $users = User::all();
+  $users->each(function($item, $key){
+    $this->info("Notifying {$item->name}");
+    $item->notify(new InspireUser(Inspiring::quote()));
+  });
+})->describe('Send an in inspiring quote to all your users');
