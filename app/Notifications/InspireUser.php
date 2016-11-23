@@ -30,10 +30,10 @@ class InspireUser extends Notification
      * @param   mixed  $notifiable
      * @return array
      */
-    public function via($notifiable)
-    {
-        return [TwilioChannel::class];
-    }
+      public function via($notifiable)
+      {
+          return [TwilioChannel::class];
+      }
 
     public function toTwilio($notifiable)
      {
