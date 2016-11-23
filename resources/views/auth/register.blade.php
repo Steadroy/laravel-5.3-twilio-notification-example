@@ -38,15 +38,15 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
-                            <label for="phone" class="col-md-4 control-label">Phone</label>
+                        <div class="form-group{{ $errors->has('phone_number') ? ' has-error' : '' }}">
+                            <label for="phone_number" class="col-md-4 control-label">phone_number</label>
 
                             <div class="col-md-6">
-                                <input id="phone" type="tel" class="form-control" name="phone" value="{{ old('phone') }}" required>
+                                <input id="phone_number" type="tel" class="form-control" name="phone_number" value="{{ old('phone_number') }}" required>
 
-                                @if ($errors->has('phone'))
+                                @if ($errors->has('phone_number'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('phone') }}</strong>
+                                        <strong>{{ $errors->first('phone_number') }}</strong>
                                     </span>
                                 @endif
                             </div>
